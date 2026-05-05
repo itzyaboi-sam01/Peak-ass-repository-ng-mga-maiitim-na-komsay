@@ -37,13 +37,11 @@ body {
     cursor: pointer;
 }
 
-/* MAIN LAYOUT */
 .main-container {
     height: 100vh;
     display: flex;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 220px;
     background: #ffffff;
@@ -76,14 +74,12 @@ body {
     padding: 20px;
 }
 
-/* CONTENT HEADER */
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* TABLE */
 .product-table {
     width: 100%;
     border-collapse: collapse;
