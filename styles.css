@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: Roboto, Noto Sans, Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+.sidebar {
+    width: 250px;
+    background: #111;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 5px;
+    border: #ffffff;
+}
+
+.sidebar nav a {
+    box-sizing: border-box;
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: #141c24;
+    border-radius: 3px;
+}
+
+.sidebar nav a:hover {
+    color: #f39c12;
+}
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+.main-content {
+    flex: 1;
+    background: rgba(245, 222, 179, 0.604);
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.topbar {
+    background: aliceblue;
+    padding: 20px;
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.hero img {
+    display: flex;
+    justify-content: flex-start;
+    width: 120px;
+    height: 120px;
+    outline: 3px solid #ccc;
+    outline-offset: 4px;
+}
+
+
+.hero h1 span {
+    color: #e64c4c;
+}
+
+
+section {
+    margin-top: 20px;
+}
+
+article {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+ul {
+    margin-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #141c24;
+    color: white;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
