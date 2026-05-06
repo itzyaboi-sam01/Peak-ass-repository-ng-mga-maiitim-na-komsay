@@ -49,6 +49,10 @@ body {
     border-right: 1px solid #ddd;
 }
 
+.sidebar ul li a:hover {
+    background-color: #cc0000
+}
+
 .sidebar nav a {
     color:#141c24;
     text-decoration: none;
