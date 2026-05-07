@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const searchBar = document.querySelector(".search-bar");
 
-    // Select all products
     const products = document.querySelectorAll(".product");
 
     searchBar.addEventListener("keyup", function () {
