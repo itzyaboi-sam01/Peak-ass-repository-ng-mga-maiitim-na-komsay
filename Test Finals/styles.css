@@ -102,7 +102,7 @@ article {
 }
 
 .texbox {
-    background: white;
+    background: rgba(255, 255, 255, 0.86);
     padding: 30px;
     border-radius: 2px;
     max-width: 40%;
