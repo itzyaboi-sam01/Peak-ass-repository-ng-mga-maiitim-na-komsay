@@ -87,6 +87,12 @@ body {
     cursor: pointer;
 }
 
+.sidebar label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 /* CONTENT */
 .content {
     flex: 1;
