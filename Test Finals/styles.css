@@ -141,6 +141,31 @@ article {
   background: #0056b3;
 }
 
+.content .hero-about {
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("about.jpg");
+
+    width: 100%;
+    max-width: 1050px;   
+    min-height: 40px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px;
+    color: white;
+    border-radius: 10px;
+    margin: auto;
+}
+
 .content .hero-container {
     background-image: linear-gradient(
         rgba(0,0,0,0.5),
@@ -185,7 +210,10 @@ article {
 }
 
 .sidebar ul li a:hover {
-    background-color: #cc0000
+    font-weight: bold;
+    padding: 10px;
+    border-left: 3px solid #cc0000;
+    outline: black;
 }
 
 .sidebar nav a {
