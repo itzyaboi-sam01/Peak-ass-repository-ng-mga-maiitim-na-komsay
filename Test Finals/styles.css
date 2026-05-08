@@ -10,7 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #cc0000;
+    background: #cc0000ed;
     color: white;
     padding: 2px 20px;
 }
@@ -99,6 +99,28 @@ article {
     background: rgba(245, 222, 179, 0.604);
     padding: 30px;
     overflow-y: auto;
+}
+
+.content header {
+    font-size: 60px;
+    line-height: 0.9;
+    text-align: center;
+    color: #000000e3;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-top: 20px;
+    padding-bottom: 10px;
+}
+
+.content .sub p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333e6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 50%;
 }
 
 .texbox {
@@ -202,16 +224,46 @@ article {
     flex: 1;
 }
 
+.product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 300px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 12px;
+    color: #1d1d1d;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
 .sidebar {
     width: 220px;
     background: #ffffff;
-    padding: 20px 80px 80px 20px;
+    padding: 20px;
     border-right: 1px solid #ddd;
 }
 
 .sidebar ul li a:hover {
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
     border-left: 3px solid #cc0000;
     outline: black;
 }
@@ -246,8 +298,6 @@ article {
     justify-content: space-between;
     align-items: center;
 }
-
-
 
 .product-table {
     width: 100%;
