@@ -3,59 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <title>BantayStocks LTD - Not so authorized stock checker for your Komsay needs</title>
-     <link href="https://fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto:ital,wght@0,100..900;1,100..900" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="icon1.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
+<div class="container">
 
-<header class="navbar">
-    <div class="logo">
-        <nav>
-            <a href="homepage.html"><img src="logo.png" alt="Mabangis na Logo"></a>
-        </nav>
-        <p>For Komsays by Komsays</p>
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <nav>
+                <a href="homepage.html">
+                    <img src="logo.png" alt="BantayStocks Logo">
+                </a>
+            </nav>
+
+            <p>For Komsays by Komsays</p>
+        </div>
+
+        <input type="text"
+               placeholder="⌕ Search for components..."
+               class="search-bar">
+
+        <div class="nav-actions">
+
+            <div class="login-register">
+                <span class="small-text">Login or</span>
+                <span class="reg">REGISTER</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cart">
+                <img src="shoppingcart.png" alt="Cart Icon">
+                <span>Cart</span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <div class="main-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h3>Categories</h3>
+
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="built.html">Built PCs</a></li>
+                    <li><a href="mother.html">Motherboards</a></li>
+                    <li><a href="process.html">Processors</a></li>
+                    <li><a href="GPU.html">GPUs</a></li>
+                    <li><a href="acc.html">Accessories</a></li>
+                    <li><a href="index.html">Products</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <header><strong>Your Parts. Your Build.<br>Your Power.<br></strong> </header>
+            <div class="sub"><p>We offer a wide range of components, from built PCs to individual parts like motherboards, processors, GPUs, and accessories. Stay updated with the latest stock information.</p></div>
+
+            <div class="hero-container">
+                <div class="texbox">
+                <h1>The best <u><strong>not so</strong></u> authorized stock checker for your Komsay needs.</h1>
+                <br>
+
+                 <p>
+                    Your one-stop shop for all your Komsay needs!
+                    We offer a wide range of components, from built PCs
+                    to individual parts like motherboards, processors,
+                    GPUs, and accessories.
+                </p>
+
+                <a href="about.html" class="btn">Learn More</a>
+                </div>
+            </div>    
+            
+    <div class="featured-container">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card"><a href="process.html">
+                <img src="shopping1.jpg" alt="Product 1">
+                <h3>AMD Ryzen 5 5500</h3>
+                <p>Mid-range processor for chill gaming needs.</p>
+                <hr>
+                <div class="price">₱ 5,200</div>
+                </a>
+            </div>
+
+            <div class="product-card"><a href="mother.html">
+                <img src="shopping2.jpg" alt="Product 2">
+                <h3>Asus PRIME B550M-A WIFI II Micro ATX AM4 Motherboard</h3>
+                <p>Compatible with the AM4 socket for optimal performance.</p>
+                <hr>
+                <div class="price">₱ 6,800</div>
+                </a>
+            </div>
+
+            <div class="product-card"><a href="acc.html">
+                <img src="shopping3.jpg" alt="Product 3">
+                <h3>Phantexs H3 Pro Mid Tower Case</h3>
+                <p>Stylish and functional case designed for optimal airflow and aesthetics.</p>
+                <hr>
+                <div class="price">₱ 2,500</div>
+            </a>
+        </div>
+
     </div>
+</div>
+            </div>
+        </main>
 
-    <input type="text" placeholder="Search for components..." class="search-bar">
-
-    <div class="nav-actions">
-        <span>Login</span>
-        <span>Cart</span>
     </div>
-</header>
-
-
-<div class="main-container">
-
-    
-    <aside class="sidebar">
-        <h3>Categories</h3>
-        <nav>
-            <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="built.html" >Built PCs</a></li>
-            <li><a href="mother.html">Motherboards</a></li>
-            <li><a href="process.html">Processors</a></li>
-            <li><a href="GPU.html">GPUs</a></li>
-            <li><a href="acc.html">Accesorries</a></li>
-            <li><a href="index.html">Products</a></li>
-        </ul>
-        </nav>
-        
-
-        <h3>Filters</h3>
-        <label><input type="checkbox"> In Stock</label>
-        <label><input type="checkbox"> Cheap</label>
-    </aside>
 
 </div>
 
-    
 <footer>
     <hr>
-    <p><center>&copy; 2026 ThePeak7 Org. All Rights Reserved.</center></p>
+    <img src="logo.png" alt="Mabangis na Logo">
+    <p>&copy; 2026 ThePeak7 Org. All Rights Reserved.</p>
 </footer>
+
 <script src="script.js"></script>
+
 </body>
-</html>    
+</html>

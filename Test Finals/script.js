@@ -60,4 +60,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    const searchBar = document.querySelector(".search-bar");
+
+    const products = document.querySelectorAll(".product");
+
+    searchBar.addEventListener("keyup", function () {
+
+        const searchValue = this.value.toLowerCase();
+
+        products.forEach(function(product) {
+
+            const productName =
+                product.querySelector("h2").textContent.toLowerCase();
+
+            if (productName.includes(searchValue)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+
+        });
+
+    });
+
 });
