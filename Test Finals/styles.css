@@ -4,6 +4,17 @@ body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
     background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box; /* removes the horizontal scrollbar */
+}
+
+.footer-adjuster {
+    flex: 1 0 auto;
 }
 
 .navbar {
@@ -220,84 +231,9 @@ article {
 }
 
 .main-container {
+    flex: 1; /* added for making the footer responsive to be always at bottom */
     display: flex;
-    flex: 1;
-}
-
-.product-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    color: black;
-    text-decoration: none;
     flex-direction: row;
-}
-
-.product-card {
-    width: 300px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    color: black;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.product-card a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.product-card img {
-    width: 80%;
-    height: 220px;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-.product-card h3 {
-    min-height: 70px;
-}
-
-.product-card p {
-    min-height: 60px;
-}
-
-.price {
-    margin-top: auto;
-    padding-top: 15px;
-    border-top: 1px solid #555;
-    font-weight: bold;
-    text-align: left;
-}
-
-.product-card a h3:hover {
-    font-weight: bold;
-    padding: 1px;
-    border-left: 3px solid #cc0000;
-    outline: black;
-    color: red
-}
-
-.product-card img {
-    width: 80%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.price {
-    font-size: 12px;
-    color: #1d1d1d;
-    margin-top: 10px;
-    font-weight: bold;
-    text-align: left;
 }
 
 .sidebar {
@@ -331,6 +267,12 @@ article {
 .sidebar li {
     padding: 6px 0;
     cursor: pointer;
+}
+
+.sidebar label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 /* CONTENT */
@@ -373,6 +315,9 @@ footer {
     padding: 10px;
     background-color: #cecdce;
     color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 10px;
+    flex-shrink: 0;
 }
 
 footer img {
@@ -382,3 +327,4 @@ footer img {
     margin-top: 10px;
     padding: 5px;
 }
+

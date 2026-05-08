@@ -1,0 +1,62 @@
+.Item-Grids {
+    display: grid;
+    grid-template-columns: auto auto auto; /* just incase */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px 40px 40px 40px;
+    align-items: start;
+    background-color: white;
+    mix-blend-mode: multiply;       
+}
+
+
+
+input::-webkit-outer-spin-button, /* removes up and down thingies to number inputs */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Item-Grids img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.Item-Grids figcaption {
+    height: 80px;
+    display: flex;  
+    margin-bottom: 15px;
+    flex-direction: column;    /* Gives every caption the same amount of space */
+    text-align: center; 
+    line-height: 1.2;
+    overflow: hidden;
+    justify-content: center; /* Prevents extra long names from breaking the grid */
+    font-size: 14px;
+}
+
+.Item-Grids figure {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.Item-Grids label {
+    display: block;
+    height: 20px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+form input {
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+
+.category-title {
+    text-align: center;
+}
+
