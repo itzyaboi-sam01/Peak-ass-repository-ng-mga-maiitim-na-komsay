@@ -1,71 +1,162 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Selectors
+
+    // 1. SELECTORS
     const searchInput = document.querySelector(".search-bar");
-    const sortSelect = document.querySelector("#price-sort"); // Added ID for clarity
     const checkboxes = document.querySelectorAll(".sidebar input[type='checkbox']");
+    const cartText = document.querySelector('.cart > span');
+    const cartList = document.getElementById('cart-items-list');
+    const totalPriceDisplay = document.getElementById('total-price');
+    const cartIcon = document.querySelector('.cart');
     
-    // Select both Cards (figure) and Table Rows (tr)
-    const getItems = () => document.querySelectorAll("figure, .product-card, .product-table tr:not(:first-child)");
 
-    // 2. Unified Search Function
+    // Select all product cards
+    const getItems = () => document.querySelectorAll("figure");
+
+    // 2. CART VARIABLES
+    let itemCount = 0;
+    let totalPrice = 0;
+
+    // 3. TOGGLE CART
+    window.toggleCart = function () {
+        const cartTab = document.getElementById('cart-tab');
+        const cartOverlay = document.getElementById('cart-overlay');
+
+        if (cartTab && cartOverlay) {
+            cartTab.classList.toggle('active');
+            cartOverlay.classList.toggle('active');
+        }
+    };
+
+    // 4. OPEN CART
+    function openCart() {
+        const cartTab = document.getElementById('cart-tab');
+        const cartOverlay = document.getElementById('cart-overlay');
+
+        if (cartTab && cartOverlay) {
+            cartTab.classList.add('active');
+            cartOverlay.classList.add('active');
+        }
+    }
+
+    // Open cart when clicking icon
+    if (cartIcon) {
+        cartIcon.addEventListener('click', toggleCart);
+    }
+
+    // 5. SEARCH & FILTERS
+    function applyAllFilters() {
+
+        const searchTerm = searchInput
+            ? searchInput.value.toLowerCase()
+            : "";
+
+        const showOnlyInStock = checkboxes[0]?.checked;
+        const showOnlyCheap = checkboxes[1]?.checked;
+
+        getItems().forEach(card => {
+
+            const name = card.querySelector("figcaption")
+                .textContent
+                .toLowerCase();
+
+            const priceText = card.querySelector(".price").textContent;
+
+            const price = parseFloat(
+                priceText.replace(/[₱,]/g, "")
+            );
+
+            const stockText = card.querySelector(".stock")
+                .textContent
+                .toLowerCase();
+
+            let isVisible = name.includes(searchTerm);
+
+            // FILTERS
+            if (showOnlyInStock &&
+                stockText.includes("unavailable")) {
+                isVisible = false;
+            }
+
+            if (showOnlyCheap && price > 30000) {
+                isVisible = false;
+            }
+
+            card.style.display = isVisible
+                ? "flex"
+                : "none";
+        });
+    }
+
+    // Event listeners
     if (searchInput) {
-        searchInput.addEventListener("input", function () {
-            const value = this.value.toLowerCase();
-            const items = getItems();
-
-            items.forEach(item => {
-                // Get text from figcaption (GPU), h3 (Home), or whole row (Table)
-                const titleElement = item.querySelector("figcaption, h3") || item;
-                const text = titleElement.textContent.toLowerCase();
-                
-                // Show/Hide based on search
-                item.style.display = text.includes(value) ? "" : "none";
-            });
-        });
+        searchInput.addEventListener("input", applyAllFilters);
     }
 
-    // 3. Filter Logic (Checkboxes)
-    function applyFilters() {
-        const showOnlyInStock = checkboxes[0]?.checked; // Assuming first checkbox is stock
-        const showOnlyCheap = checkboxes[1]?.checked;   // Assuming second is price
-
-        getItems().forEach(item => {
-            let isVisible = true;
-
-            // Get Stock Info
-            const stockText = item.querySelector(".stock")?.textContent.toLowerCase() || "";
-            const isAvailable = stockText.includes("stock") && !stockText.includes("0");
-
-            // Get Price Info
-            const priceText = item.querySelector(".price")?.textContent || "0";
-            const priceValue = parseFloat(priceText.replace(/[₱,]/g, ""));
-
-            // Filter conditions
-            if (showOnlyInStock && !isAvailable) isVisible = false;
-            if (showOnlyCheap && priceValue > 10000) isVisible = false;
-
-            item.style.display = isVisible ? "" : "none";
-        });
-    }
-
-    checkboxes.forEach(box => {
-        box.addEventListener("change", applyFilters);
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", applyAllFilters);
     });
 
-    // 4. Cart Logic
-    const cartBtn = document.querySelector('.cart');
-    let itemCount = 0;
+    // 6. ADD TO CART
+    window.addToCart = function (name, price, event) {
 
-    if (cartBtn) {
-        cartBtn.addEventListener('click', () => {
-            alert(`You have ${itemCount} items in your cart.`);
-        });
-    }
-
-    // Export addToCart to global window so HTML buttons can see it
-    window.addToCart = function() {
         itemCount++;
-        const cartText = document.querySelector('.cart span');
-        if (cartText) cartText.textContent = `Cart (${itemCount})`;
+        totalPrice += price;
+
+        // Update navbar cart text
+        if (cartText) {
+            cartText.textContent = `Cart (${itemCount})`;
+        }
+
+        // Update total price
+        if (totalPriceDisplay) {
+            totalPriceDisplay.textContent =
+                totalPrice.toLocaleString();
+        }
+
+        // Create cart item
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <div>
+                <strong>${name}</strong>
+                <p>₱${price.toLocaleString()}</p>
+            </div>
+        `;
+
+        cartList.appendChild(li);
+
+        // Button feedback
+        if (event) {
+
+            const btn = event.target;
+            const originalText = btn.innerText;
+
+            btn.innerText = "Added!";
+            btn.style.backgroundColor = "#28a745";
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "";
+            }, 1500);
+        }
     };
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const cart = document.querySelector(".cart");
+
+    window.toggleCart = function () {
+
+        const cartTab = document.getElementById("cart-tab");
+        const cartOverlay = document.getElementById("cart-overlay");
+
+        cartTab.classList.toggle("active");
+        cartOverlay.classList.toggle("active");
+    };
+
+    // CLICK CART TO OPEN
+    cart.addEventListener("click", toggleCart);
+});
+
+    
 });

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BantayStocks LTD - Not so authorized stock checker for your Komsay needs</title>
+
+    <link rel="icon" type="image/x-icon" href="icon1.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="itemgrids.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <nav>
+                <a href="homepage.html">
+                    <img src="logo.png" alt="BantayStocks Logo">
+                </a>
+            </nav>
+
+            <p>For Komsays by Komsays</p>
+        </div>
+
+        <input type="text"
+               placeholder="⌕ Search for components..."
+               class="search-bar">
+
+        <div class="nav-actions">
+
+            <div class="login-register">
+                <span class="small-text">Login or</span>
+                <span class="reg">REGISTER</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="shoppingcart.png" alt="Cart Icon">
+                    <span>Cart</span>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <div class="main-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h3>Categories</h3>
+
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="built.html">Built PCs</a></li>
+                    <li><a href="mother.html">Motherboards</a></li>
+                    <li><a href="process.html">Processors</a></li>
+                    <li><a href="GPU.html">GPUs</a></li>
+                    <li><a href="acc.html">Accessories</a></li>
+                </ul>
+            </nav>
+
+            <h3>Filters</h3>
+
+            <label>
+                <input type="checkbox">
+                In Stock
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Cheap
+            </label>
+
+            <br>
+
+            <div class="cart-details">
+                <h3>Your Cart</h3>
+                <ul id="cart-items-list">
+                 <!-- New products will be injected here by JavaScript -->
+            </ul>
+                <div class="cart-total">
+                    <strong>Total: ₱<span id="total-price">0</span></strong>
+                </div>
+            </div>
+
+        </aside>
+
+                        <!-- The Sliding Cart Tab -->
+                <div id="cart-tab" class="cart-tab">
+                    <div class="cart-header">
+                    <h2>Your Shopping Cart</h2>
+                    <span class="close-cart" onclick="toggleCart()">CLOSE</span>
+                </div>
+
+                    <!-- This list is populated by your JS -->
+                <ul id="cart-items-list" class="cart-items-list">
+                <!-- New items will appear here -->
+                </ul>
+
+            <div class="cart-footer">
+                <div class="total-row">
+                    <strong>Total:</strong>
+                    <span>₱<span id="total-price">0</span></span>
+                </div>
+                <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+
+    <!-- Background dimming when cart is open -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+        <form class="Items">
+        <h1 class="category-title">Add to Cart</h1>
+        <div class="Item-Grids">
+
+            
+            <figure>
+                <img src="GPUs Products/ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card.webp"  alt="#">
+                    <figcaption>ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card</figcaption>
+                    <div class="price">₱222,650</div>
+                    <div class="stock">Stock: 200</div>
+                    <button type="button" class="btn" onclick="addToCart('RTX 5090', 222650)">Add to Cart</button>
+                </figure>
+
+        </div>
+    </form>
+
+    </div>
+
+</div>
+
+<footer>
+    <hr>
+    <img src="logo.png" alt="Mabangis na Logo">
+    <p>&copy; 2026 ThePeak7 Org. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

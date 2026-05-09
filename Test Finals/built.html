@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="itemgrids.css">
 </head>
 
 <body>
@@ -45,8 +46,10 @@
             <div class="divider"></div>
 
             <div class="cart">
-                <img src="shoppingcart.png" alt="Cart Icon">
-                <span>Cart</span>
+                <a href="cart.html">
+                    <img src="shoppingcart.png" alt="Cart Icon">
+                    <span>Cart</span>
+                </a>
             </div>
 
         </div>
@@ -86,32 +89,86 @@
 
         </aside>
 
-        <!-- CONTENT -->
-        <main class="content">
+        <form class="Items">
+        <h1 class="category-title">GPU Category</h1>
+        <div class="Item-Grids">
 
-            <article>
-                <h1>Welcome to BantayStocks LTD</h1>
+            
+            <figure>
+                <img src="GPUs Products/ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card.webp"  alt="#">
+                    <figcaption>ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card</figcaption>
+                    <div class="price">₱222,650</div>
+                    <div class="stock">Stock: 200</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
 
-                <p>
-                    Your one-stop shop for all your Komsay needs!
-                    We offer a wide range of components, from built PCs
-                    to individual parts like motherboards, processors,
-                    GPUs, and accessories.
-                </p>
+            <figure>
+                <img src="GPUs Products/MSI SHADOW 2X OC GeForce RTX 5070.jpg" alt="#">
+                    <figcaption>MSI SHADOW 2X OC GeForce RTX 5070</figcaption>
+                    <div class="price">₱45,530</div>
+                    <div class="stock">Stock: 800</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+            </figure>
 
-                <p>
-                    Our mission is to provide Komsays with the best
-                    products at competitive prices. Browse our categories
-                    and use our filters to find exactly what you need.
-                </p>
+            <figure>
+                <img src="GPUs Products/Gigabyte Radeon RX 9060 XT Gaming OC 16gb Graphics Card.webp"  alt="#">
+                    <figcaption>Gigabyte Radeon RX 9060 XT Gaming OC 16gb Graphics Card</figcaption>
+                    <div class="price">₱32,000</div>
+                    <div class="stock">Stock: 1,000</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+            </figure>
 
-                <p>
-                    Happy shopping!
-                </p>
 
-            </article>
+                <figure>
+                    <img src="GPUs Products/Gigabyte Rtx 5050 Windforce Oc 8gb Gddr6 Graphic Card.webp" alt="#">
+                        <figcaption>Gigabyte Rtx 5050 Windforce Oc 8gb Gddr6 Graphic Card</figcaption>
+                    <div class="price">₱18,990</div>
+                    <div class="stock">Stock: 700</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
+    
+                <figure>
+                    <img src="GPUs Products/MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE.webp" alt="#">
+                        <figcaption>MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE</figcaption>
+                        <div class="price">₱25,990</div>
+                        <div class="stock">Stock: 200</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
+    
+                <figure>
+                    <img src="GPUs Products/Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card.webp" alt="#">
+                        <figcaption>Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card</figcaption>
+                        <div class="price">₱40,650</div>
+                        <div class="stock">Stock: 400</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
+            
+                <figure>
+                    <img src="GPUs Products/NVIDIA Quadro - Graphics Card - Quadro RTX 4000 - 8 GB GDDR6 - PCIe 3.0 X16 - 3 x DisplayPort.webp" alt="#">
+                        <figcaption>NVIDIA Quadro - Graphics Card - Quadro RTX 4000 - 8 GB GDDR6 - PCIe 3.0 X16 - 3 x DisplayPort</figcaption>
+                    <div class="price">₱30,990</div>
+                    <div class="stock">Stock: unavailable</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
+        
+                <figure>
+                    <img src="GPUs Products/Sapphire 11309-03-20G Pulse AMD Radeon RX 6600 XT Graphics Card 8GB GDDR6.webp" alt="#">
+                        <figcaption>Sapphire 11309-03-20G Pulse AMD Radeon RX 6600 XT Graphics Card 8GB GDDR6</figcaption>
+                        <div class="price">₱25,650</div>
+                        <div class="stock">Stock: 1,000</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
+        
+                <figure>
+                    <img src="GPUs Products/Sparkle Intel Arc B580 Titan Oc Edition 12gb Gddr6 Graphic Card.webp" alt="#">
+                        <figcaption>Sparkle Intel Arc B580 Titan Oc Edition 12gb Gddr6 Graphic Card</figcaption>
+                        <div class="price">₱30,650</div>
+                        <div class="stock">Stock: 1,000</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
 
-        </main>
+        </div>
+    </form>
 
     </div>
 
