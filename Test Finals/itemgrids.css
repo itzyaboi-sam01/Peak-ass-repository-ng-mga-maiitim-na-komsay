@@ -1,62 +1,83 @@
-.Item-Grids {
-    display: grid;
-    grid-template-columns: auto auto auto; /* just incase */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 20px 40px 40px 40px;
-    align-items: start;
-    background-color: white;
-    mix-blend-mode: multiply;       
-}
-
-
-
-input::-webkit-outer-spin-button, /* removes up and down thingies to number inputs */
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.Item-Grids img {
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.Item-Grids figcaption {
-    height: 80px;
-    display: flex;  
-    margin-bottom: 15px;
-    flex-direction: column;    /* Gives every caption the same amount of space */
-    text-align: center; 
-    line-height: 1.2;
-    overflow: hidden;
-    justify-content: center; /* Prevents extra long names from breaking the grid */
-    font-size: 14px;
-}
-
-.Item-Grids figure {
+/* 1. Container - Centering the whole section */
+.Items {
+    flex: 1;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-}
-
-.Item-Grids label {
-    display: block;
-    height: 20px;
-    margin-top: 5px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-form input {
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    font-weight: bold;
+    align-items: center; /* Centers the Title and the Grid horizontally */
+    background: rgba(245, 222, 179, 0.2); /* Matching your main-content vibe */
 }
 
 .category-title {
+    width: 100%;
+    max-width: 1200px; /* Limits width to keep it looking clean on wide screens */
     text-align: center;
+    font-size: 36px;
+    color: #cc0000;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* 2. The Grid - Centered and Row-based */
+.Item-Grids {
+    display: grid;
+    /* This creates as many columns as fit, but centers them */
+    grid-template-columns: repeat(auto-fit, 300px); 
+    justify-content: center; /* This is the key to centering the grid items */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Limits how far the rows stretch */
+    margin: 0 auto;
+}
+
+/* 3. The Cards (Figures) */
+.Item-Grids figure {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.Item-Grids figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-color: #cc0000;
+}
+
+/* 4. Product Image */
+.Item-Grids img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* 5. Text Styling */
+.Item-Grids figcaption {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    min-height: 50px; /* Keeps card heights uniform */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin-top: auto; /* Pushes price to the bottom */
+}
+
+.stock {
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    margin-top: 8px;
+}
