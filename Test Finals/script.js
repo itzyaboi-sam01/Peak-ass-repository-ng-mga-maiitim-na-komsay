@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. SELECTORS
+    // SELECTORS
     const searchInput = document.querySelector(".search-bar");
     const checkboxes = document.querySelectorAll(".sidebar input[type='checkbox']");
     const cartText = document.querySelector('.cart > span');
@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartIcon = document.querySelector('.cart');
     
 
-    // Select all product cards
+    //product cards
     const getItems = () => document.querySelectorAll("figure");
 
-    // 2. CART VARIABLES
+    //Cart Variables
     let itemCount = 0;
     let totalPrice = 0;
 
-    // 3. TOGGLE CART
+    //Toggle Cat
     window.toggleCart = function () {
         const cartTab = document.getElementById('cart-tab');
         const cartOverlay = document.getElementById('cart-overlay');
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // 4. OPEN CART
+    //Open Cart
     function openCart() {
         const cartTab = document.getElementById('cart-tab');
         const cartOverlay = document.getElementById('cart-overlay');
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cartIcon.addEventListener('click', toggleCart);
     }
 
-    // 5. SEARCH & FILTERS
+    //Search & Filters
     function applyAllFilters() {
 
         const searchTerm = searchInput
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let isVisible = name.includes(searchTerm);
 
-            // FILTERS
+            // Filter logic
             if (showOnlyInStock &&
                 stockText.includes("unavailable")) {
                 isVisible = false;
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cb.addEventListener("change", applyAllFilters);
     });
 
-    // 6. ADD TO CART
+    //ADD TO CART
     window.addToCart = function (name, price, event) {
 
         itemCount++;
