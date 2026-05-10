@@ -63,15 +63,27 @@
             <nav>
                 <ul>
                     <li><a href="homepage.html">Home</a></li>
-                    <li><a href="built.html">Built PCs</a></li>
-                    <li><a href="mother.html">Motherboards</a></li>
-                    <li><a href="process.html">Processors</a></li>
+                    <li><a href="RAM.html">RAMs</a></li>
+                    <li><a href="MOTHERBOARD.html">Motherboards</a></li>
+                    <li><a href="PROCESSORS.html">Processors</a></li>
                     <li><a href="GPU.html">GPUs</a></li>
                     <li><a href="acc.html">Accessories</a></li>
-                    <li><a href="index.html">Products</a></li>
                 </ul>
             </nav>
 
+            <h3>Filters</h3>
+
+            <label>
+                <input type="checkbox">
+                In Stock
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Cheap
+            </label>
+
+        </aside>
 
     <form class="Items">
         <h1 class="category-title">GPU Category</h1>
@@ -79,94 +91,76 @@
 
             
             <figure>
-                <img src="GPUs Products\ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card.webp"  alt="#">
+                <img src="GPUs Products/ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card.webp"  alt="#">
                     <figcaption>ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC Edition Graphics Card</figcaption>
-                    <label>Price(₱): </label>
-                <input type="number" name="price" value="222650">
+                    <div class="price">₱222,650</div>
+                    <div class="stock">Stock: 200</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                </figure>
 
-                <label>Qty: </label>
-                <input type="number" name="qty" value="10000" maxlength="10000">
+            <figure>
+                <img src="GPUs Products/MSI SHADOW 2X OC GeForce RTX 5070.jpg" alt="#">
+                    <figcaption>MSI SHADOW 2X OC GeForce RTX 5070</figcaption>
+                    <div class="price">₱45,530</div>
+                    <div class="stock">Stock: 800</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
             </figure>
 
             <figure>
-                <img src="GPUs Products\Colorful RTX 5060 NB Duo.webp" alt="#">
-                    <figcaption>Colorful RTX 5060 NB Duo</figcaption>
-                    <label>Price(₱): </label>
-                <input type="number" name="price" value="1500">
-
-                <label>Qty: </label>
-                <input type="number" name="qty" value="10000" maxlength="10000">
-            </figure>
-
-            <figure>
-                <img src="GPUs Products\Gigabyte Radeon RX 9060 XT Gaming OC 16gb Graphics Card.webp"  alt="#">
+                <img src="GPUs Products/Gigabyte Radeon RX 9060 XT Gaming OC 16gb Graphics Card.webp"  alt="#">
                     <figcaption>Gigabyte Radeon RX 9060 XT Gaming OC 16gb Graphics Card</figcaption>
-                    <label>Price(₱): </label>
-                <input type="number" name="price" value="2500">
-
-                <label>Qty: </label>
-                <input type="number" name="qty" value="10000" maxlength="10000">
+                    <div class="price">₱32,000</div>
+                    <div class="stock">Stock: 1,000</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
             </figure>
 
 
                 <figure>
                     <img src="GPUs Products/Gigabyte Rtx 5050 Windforce Oc 8gb Gddr6 Graphic Card.webp" alt="#">
                         <figcaption>Gigabyte Rtx 5050 Windforce Oc 8gb Gddr6 Graphic Card</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="5000">
-
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                    <div class="price">₱18,990</div>
+                    <div class="stock">Stock: 700</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
     
                 <figure>
-                    <img src="GPUs Products\MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE.webp" alt="#">
+                    <img src="GPUs Products/MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE.webp" alt="#">
                         <figcaption>MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="1500">
-
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                        <div class="price">₱25,990</div>
+                        <div class="stock">Stock: 200</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
     
                 <figure>
-                    <img src="GPUs Products\Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card.webp" alt="#">
+                    <img src="GPUs Products/Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card.webp" alt="#">
                         <figcaption>Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="2500">
-
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                        <div class="price">₱40,650</div>
+                        <div class="stock">Stock: 400</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
             
                 <figure>
-                    <img src="GPUs Products\NVIDIA Quadro - Graphics Card - Quadro RTX 4000 - 8 GB GDDR6 - PCIe 3.0 X16 - 3 x DisplayPort.webp" alt="#">
-                        <figcaption>Gigabyte Rtx 5050 Windforce Oc 8gb Gddr6 Graphic Card</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="5000">
-    
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                    <img src="GPUs Products/NVIDIA Quadro - Graphics Card - Quadro RTX 4000 - 8 GB GDDR6 - PCIe 3.0 X16 - 3 x DisplayPort.webp" alt="#">
+                        <figcaption>NVIDIA Quadro - Graphics Card - Quadro RTX 4000 - 8 GB GDDR6 - PCIe 3.0 X16 - 3 x DisplayPort</figcaption>
+                    <div class="price">₱30,990</div>
+                    <div class="stock">Stock: unavailable</div>
+                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
         
                 <figure>
-                    <img src="GPUs Products\Sapphire 11309-03-20G Pulse AMD Radeon RX 6600 XT Graphics Card 8GB GDDR6.webp" alt="#">
-                        <figcaption>MSI GeForce RTX 5060 8G VENTUS 2X OC WHITE</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="1500">
-    
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                    <img src="GPUs Products/Sapphire 11309-03-20G Pulse AMD Radeon RX 6600 XT Graphics Card 8GB GDDR6.webp" alt="#">
+                        <figcaption>Sapphire 11309-03-20G Pulse AMD Radeon RX 6600 XT Graphics Card 8GB GDDR6</figcaption>
+                        <div class="price">₱25,650</div>
+                        <div class="stock">Stock: 1,000</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
         
                 <figure>
-                    <img src="GPUs Products\Sparkle Intel Arc B580 Titan Oc Edition 12gb Gddr6 Graphic Card.webp" alt="#">
-                        <figcaption>Zotac Gaming GeForce RTX 5060 Ti 16GB GDDR7 AMP Graphics Card</figcaption>
-                        <label>Price(₱): </label>
-                    <input type="number" name="price" value="2500">
-    
-                    <label>Qty: </label>
-                    <input type="number" name="qty" value="10000" maxlength="10000">
+                    <img src="GPUs Products/Sparkle Intel Arc B580 Titan Oc Edition 12gb Gddr6 Graphic Card.webp" alt="#">
+                        <figcaption>Sparkle Intel Arc B580 Titan Oc Edition 12gb Gddr6 Graphic Card</figcaption>
+                        <div class="price">₱30,650</div>
+                        <div class="stock">Stock: 1,000</div>
+                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
                 </figure>
 
         </div>

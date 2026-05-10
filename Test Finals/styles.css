@@ -1,330 +1,280 @@
+/* 1. Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap');
 
 body {
-    margin: 0;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-* {
-    box-sizing: border-box; /* removes the horizontal scrollbar */
-}
-
-.footer-adjuster {
-    flex: 1 0 auto;
-}
-
+/* 2. Navigation Bar */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #cc0000ed;
+    background: #cc0000;
     color: white;
-    padding: 2px 20px;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-    font-size: 15px;
-    padding: 5px;
-}
-
-.logo img{
-    margin-top: 20px;
-    width: 200px;
+.logo nav img {
+    width: 180px;
     height: auto;
+    display: block;
+}
+
+.logo p {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 4px;
 }
 
 .search-bar {
-    width: 40%;
-    height: 35px;
-    padding: 8px;
+    width: 35%;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    outline: none;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-family: 'Inter', sans-serif;
+    gap: 20px;
 }
 
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #f2f2f2;
-    border-radius: 10px;
-    gap: 30px;
-}
-
-article {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.small-text {
-    font-size: 14px;
+.login-register {
+    text-align: right;
+    line-height: 1.2;
+    cursor: pointer;
 }
 
 .reg {
-    font-size: 22px;
     font-weight: bold;
+    font-size: 18px;
+    display: block;
 }
 
 .divider {
     width: 1px;
-    height: 50px;
-    background: black;
+    height: 35px;
+    background: rgb(0, 0, 0);
 }
 
 .cart {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.cart img{
-    width: 30px;
-    height: auto;
-    
-}
-
-.login-register span {
-    flex-direction: column;
-    display: flex;
-    cursor: pointer;
-    text-align: right;
-}
-
-.main-content {
-    flex: 1;
-    background: rgba(245, 222, 179, 0.604);
-    padding: 30px;
-    overflow-y: auto;
-}
-
-.content header {
-    font-size: 60px;
-    line-height: 0.9;
-    text-align: center;
-    color: #000000e3;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    border-top: 20px;
-    padding-bottom: 10px;
-}
-
-.content .sub p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333333e6;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    width: 50%;
-}
-
-.texbox {
-    background: rgba(255, 255, 255, 0.86);
-    padding: 30px;
-    border-radius: 2px;
-    max-width: 40%;
-}
-
-.texbox p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #161515;
-}
-
-.texbox h1 {
-    color:#cc0000;
-    margin-bottom: 15px;
-}
-
-.texbox button {
-    margin-top: 20px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff0000;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.btn:hover {
-  background: #0056b3;
-}
+.cart img { width: 28px; }
 
-.content .hero-about {
-    background-image: linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    ), url("about.jpg");
-
-    width: 100%;
-    max-width: 1050px;   
-    min-height: 40px;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 40px;
-    color: white;
-    border-radius: 10px;
-    margin: auto;
-}
-
-.content .hero-container {
-    background-image: linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    ), url("pcparts.jpg");
-
-    width: 100%;
-    max-width: 1050px;   
-    min-height: 40px;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 40px;
-    color: white;
-    border-radius: 10px;
-    margin: auto;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
+/* 3. Layout Structure */
 .main-container {
-    flex: 1; /* added for making the footer responsive to be always at bottom */
     display: flex;
-    flex-direction: row;
+    flex: 1; /* Pushes footer down */
 }
 
 .sidebar {
-    width: 220px;
-    background: #ffffff;
-    padding: 20px;
+    width: 240px;
+    background: white;
+    padding: 30px 20px;
     border-right: 1px solid #ddd;
 }
 
-.sidebar ul li a:hover {
-    font-weight: bold;
-    padding: 5px;
-    border-left: 3px solid #cc0000;
-    outline: black;
-}
-
-.sidebar nav a {
-    color:#141c24;
-    text-decoration: none;
-}
-
 .sidebar h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #cc0000;
+    padding-bottom: 5px;
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar li { margin-bottom: 10px; }
+
+.sidebar a {
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    display: block;
+    padding: 8px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: #fdf2f2;
+    color: #cc0000;
+    border-radius: 4px;
+    padding-left: 15px;
+}
+
+/* 4. Main Content Area */
+.content {
+    flex: 1;
+    padding: 40px;
+    background: rgba(245, 222, 179, 0.2);
+}
+
+.content header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.sub p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+/* Hero Box */
+.hero-container {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('pcparts.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 50px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.texbox {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 450px;
+    color: #000000;
+}
+
+.texbox h1 { color: #cc0000; font-size: 24px; margin-bottom: 10px; }
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #cc0000;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* 5. Product Grid */
+.featured-container { margin-top: 40px; }
+
+.featured-container h2 { margin-bottom: 20px; font-size: 28px; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.product-card:hover { transform: translateY(-5px); }
+
+.product-card a { text-decoration: none; color: inherit; }
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 { font-size: 17px; margin-bottom: 10px; height: 40px; overflow: hidden; }
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #cc0000;
     margin-top: 10px;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 6px 0;
-    cursor: pointer;
-}
-
-.sidebar label {
+.hero-about {
+    background-image: linear-gradient(
+        rgba(0,0,0,0.6), 
+        rgba(0,0,0,0.6)
+    ), url("about.jpg"); /* Ensure the image path is correct */
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    min-height: 450px; /* Gives the about section more height */
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 40px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* CONTENT */
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
-.content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.product-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    background: white;
-}
-
-.product-table th {
-    background: #eee;
-    padding: 10px;
-    text-align: left;
-}
-
-.product-table td {
-    padding: 10px;
-    border-top: 1px solid #ddd;
-}
-
-
-.product-table tr:hover {
-    background: #f9f9f9;
-}
-
-footer {
+/* 6. The Text Box inside About Hero */
+.texbox {
+    background: rgba(255, 255, 255, 0.95); /* Nearly solid white for readability */
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 700px;
     text-align: center;
-    padding: 10px;
-    background-color: #cecdce;
-    color: rgb(0, 0, 0);
-    width: 100%;
-    padding: 10px;
-    flex-shrink: 0;
+    color: #1a1a1a;
+    border-left: 8px solid #cc0000; /* Accentuates your brand color */
+}
+
+.texbox h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #cc0000;
+}
+
+.texbox p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 7. Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
 }
 
 footer img {
-    display: flex;
-    width: 1px;
-    height: auto;
-    margin-top: 10px;
-    padding: 5px;
+    width: 120px;
+    margin-bottom: 10px;
 }
 
+footer hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin-bottom: 20px;
+}
