@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="itemgrids.css">
 </head>
 
 <body>
@@ -19,39 +20,67 @@
 <div class="container">
 
     <!-- NAVBAR -->
-    <header class="navbar">
+<header class="navbar">
 
-        <div class="logo">
-            <nav>
-                <a href="homepage.html">
-                    <img src="logo.png" alt="BantayStocks Logo">
-                </a>
-            </nav>
+    <div class="logo">
+        <nav>
+            <a href="homepage.html">
+                <img src="logo.png" alt="BantayStocks Logo">
+            </a>
+        </nav>
 
-            <p>For Komsays by Komsays</p>
+        <p>For Komsays by Komsays</p>
+    </div>
+
+    <input type="text"
+           placeholder="⌕ Search for components..."
+           class="search-bar">
+
+    <div class="nav-actions">
+
+        <div class="login-register">
+            <span class="small-text">Login or</span>
+            <span class="reg">REGISTER</span>
         </div>
 
-        <input type="text"
-               placeholder="⌕ Search for components..."
-               class="search-bar">
+        <div class="divider"></div>
 
-        <div class="nav-actions">
+        <!-- CART -->
+        <div class="cart">
+            <img src="shoppingcart.png" alt="Cart Icon">
+            <span id="cart-count">Cart</span>
+        </div>
 
-            <div class="login-register">
-                <span class="small-text">Login or</span>
-                <span class="reg">REGISTER</span>
+    </div>
+
+    <!-- Sliding Cart -->
+    <div id="cart-tab" class="cart-tab">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <span class="close-cart" onclick="toggleCart()">CLOSE</span>
+        </div>
+
+        <ul id="cart-items-list" class="cart-items-list">
+            <!-- Items injected here -->
+        </ul>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <strong>Total:</strong>
+                <span>₱<span id="total-price">0</span></span>
             </div>
 
-            <div class="divider"></div>
 
-            <div class="cart">
-                <a href="cart.html">
-                <img src="shoppingcart.png" alt="Cart Icon">
-                <span>Cart</span>
-                </a>
         </div>
+    </div>
 
-    </header>
+    <!-- Overlay -->
+    <div id="cart-overlay"
+         class="cart-overlay"
+         onclick="toggleCart()">
+    </div>
+
+</header>
 
     <!-- MAIN LAYOUT -->
     <div class="main-container">
@@ -99,8 +128,8 @@
 
         <div class="product-grid">
 
-            <div class="product-card"><a href="process.html">
-                <img src="CPUs Products/Ryzen 5.jpg" alt="Product 1">
+            <div class="product-card"><a href="PROCESSORS.html">
+                <img src="Processor products/Ryzen 5 5500.jpg" alt="Product 1">
                 <h3>AMD Ryzen 5 5500</h3>
                 <p>Mid-range processor for chill gaming needs.</p>
                 <hr>
@@ -108,7 +137,7 @@
                 </a>
             </div>
 
-            <div class="product-card"><a href="mother.html">
+            <div class="product-card"><a href="MOTHERBOARD.html">
                 <img src="Motherboards/Asus PRIME B550M-A WIFI II Micro ATX AM4 Motherboard.jpg" alt="Product 2">
                 <h3>Asus PRIME B550M-A WIFI II Micro ATX AM4 Motherboard</h3>
                 <p>Compatible with the AM4 socket for optimal performance.</p>

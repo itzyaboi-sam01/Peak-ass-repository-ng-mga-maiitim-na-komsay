@@ -20,37 +20,64 @@
     <!-- NAVBAR -->
     <header class="navbar">
 
-        <div class="logo">
-            <nav>
-                <a href="homepage.html">
-                    <img src="logo.png" alt="BantayStocks Logo">
-                </a>
-            </nav>
+    <div class="logo">
+        <nav>
+            <a href="homepage.html">
+                <img src="logo.png" alt="BantayStocks Logo">
+            </a>
+        </nav>
 
-            <p>For Komsays by Komsays</p>
+        <p>For Komsays by Komsays</p>
+    </div>
+
+    <input type="text"
+           placeholder="⌕ Search for components..."
+           class="search-bar">
+
+    <div class="nav-actions">
+
+        <div class="login-register">
+            <span class="small-text">Login or</span>
+            <span class="reg">REGISTER</span>
         </div>
 
-        <input type="text"
-               placeholder="⌕ Search for components..."
-               class="search-bar">
+        <div class="divider"></div>
 
-        <div class="nav-actions">
+        <!-- CART -->
+        <div class="cart">
+            <img src="shoppingcart.png" alt="Cart Icon">
+            <span id="cart-count">Cart</span>
+        </div>
 
-            <div class="login-register">
-                <span class="small-text">Login or</span>
-                <span class="reg">REGISTER</span>
-            </div>
+    </div>
 
-            <div class="divider"></div>
+    <!-- Sliding Cart -->
+    <div id="cart-tab" class="cart-tab">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <span class="close-cart" onclick="toggleCart()">CLOSE</span>
+        </div>
 
-            <div class="cart">
-                <img src="shoppingcart.png" alt="Cart Icon">
-                <span>Cart</span>
+        <ul id="cart-items-list" class="cart-items-list">
+            <!-- Items injected here -->
+        </ul>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <strong>Total:</strong>
+                <span>₱<span id="total-price">0</span></span>
             </div>
 
         </div>
+    </div>
 
-    </header>
+    <!-- Overlay -->
+    <div id="cart-overlay"
+         class="cart-overlay"
+         onclick="toggleCart()">
+    </div>
+
+</header>
 
     <!-- MAIN LAYOUT -->
     <div class="main-container">
@@ -95,7 +122,7 @@
                     <figcaption>Acer Predator Vesta II Silver DDR5 RAM 32GB 2x16GB 6400MHz RGB Desktop Memory</figcaption>
                     <div class="price">₱31,000</div>
                     <div class="stock">Stock: 200</div>
-                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn" onclick="addToCart('Acer Predator Vesta II Silver DDR5 RAM 32GB 2x16GB 6400MHz RGB Desktop Memory', 31000)">Add to Cart</button>
                 </figure>
 
             <figure>
@@ -103,7 +130,7 @@
                     <figcaption>Corsair Dominator Platinum RGB</figcaption>
                     <div class="price">₱8,900</div>
                     <div class="stock">Stock: 800</div>
-                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn" onclick="addToCart('Corsair Dominator Platinum RGB', 8900)">Add to Cart</button>
             </figure>
 
             <figure>
@@ -111,7 +138,7 @@
                     <figcaption>Crucial Pro DDR5 RAM 32GB Kit 6400MHz Overclocking Desktop Gaming Memory</figcaption>
                     <div class="price">₱24,500</div>
                     <div class="stock">Stock: 1,000</div>
-                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn" onclick="addToCart('Crucial Pro DDR5 RAM 32GB Kit 6400MHz Overclocking Desktop Gaming Memory', 24500)">Add to Cart</button>
             </figure>
 
 
@@ -120,7 +147,7 @@
                         <figcaption>G.SKILL Ripjaws S5 Series DDR5 RAM 32GB Desktop Computer</figcaption>
                     <div class="price">₱12,249</div>
                     <div class="stock">Stock: 700</div>
-                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn" onclick="addToCart('G.SKILL Ripjaws S5 Series DDR5 RAM 32GB Desktop Computer', 12249)">Add to Cart</button>
                 </figure>
     
                 <figure>
@@ -128,7 +155,7 @@
                         <figcaption>G.SKILL Trident Z5 RGB 32GB DDR5 Memory</figcaption>
                         <div class="price">₱8,695</div>
                         <div class="stock">Stock: 200</div>
-                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                        <button type="button" class="btn" onclick="addToCart('G.SKILL Trident Z5 RGB 32GB DDR5 Memory', 8695)">Add to Cart</button>
                 </figure>
     
                 <figure>
@@ -136,7 +163,7 @@
                         <figcaption>Kingston FURY 16GB Renegade RGB DDR5</figcaption>
                         <div class="price">₱5,595</div>
                         <div class="stock">Stock: 400</div>
-                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                        <button type="button" class="btn" onclick="addToCart('Kingston FURY 16GB Renegade RGB DDR5', 5595)">Add to Cart</button>
                 </figure>
             
                 <figure>
@@ -144,7 +171,7 @@
                         <figcaption>Kingston HyperX DDR3 RAM</figcaption>
                     <div class="price">₱470</div>
                     <div class="stock">Stock: unavailable</div>
-                    <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                    <button type="button" class="btn" onclick="addToCart('Kingston HyperX DDR3 RAM', 470)">Add to Cart</button>
                 </figure>
         
                 <figure>
@@ -152,7 +179,7 @@
                         <figcaption>Patriot Viper Venom 16GB DDR5 Desktop Memory</figcaption>
                         <div class="price">₱11,995</div>
                         <div class="stock">Stock: 1,000</div>
-                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                        <button type="button" class="btn" onclick="addToCart('Patriot Viper Venom 16GB DDR5 Desktop Memory', 11995)">Add to Cart</button>
                 </figure>
         
                 <figure>
@@ -160,7 +187,7 @@
                         <figcaption>TeamGroup T-Force Delta 16GB DDR4 RGB Desktop Memory Kit</figcaption>
                         <div class="price">₱7,995</div>
                         <div class="stock">Stock: 1,000</div>
-                        <button type="button" class="btn" onclick="addToCart()">Add to Cart</button>
+                        <button type="button" class="btn" onclick="addToCart('TeamGroup T-Force Delta 16GB DDR4 RGB Desktop Memory Kit', 7995)">Add to Cart</button>
                 </figure>
 
         </div>
