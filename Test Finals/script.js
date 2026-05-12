@@ -73,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Filter logic
             if (showOnlyInStock &&
-                stockText.includes("unavailable")) {
+                stockText.includes("unavailable" || "0 stock")) {
                 isVisible = false;
             }
 
-            if (showOnlyCheap && price > 30000) {
+            if (showOnlyCheap && price > 3500) {
                 isVisible = false;
             }
 
